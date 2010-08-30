@@ -2,6 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :sessao
   map.resources :usuarios
+  map.logout '/anuncie', :controller => 'anuncie', :action => 'index'
+  map.confirmar_plano "confirmar_plano/:plano_id", :controller => 'anuncie', :action => 'confirmar_plano'
+  
   map.logout '/sair', :controller => 'sessoes', :action => 'destroy'
   map.login '/entrar', :controller => 'sessoes', :action => 'new'
   map.register '/registro', :controller => 'usuarios', :action => 'create'

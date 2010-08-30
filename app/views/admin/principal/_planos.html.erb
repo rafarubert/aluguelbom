@@ -3,7 +3,8 @@
 <% form_for([:admin ,@usuario_plano], :url =>{:action => "add_plano"}) do |f| %>
 <% field_set_tag 'Plano' do -%>
   <%= f.error_messages %>
-<%= select("usuario_plano", "plano_id",planos_for_select ,
+  <% unless @plano%> 
+  <%= select("usuario_plano", "plano_id",planos_for_select ,
   {:include_blank => true },
   :onchange => remote_function(:update => "sobre_plano",
   :method => "get",
@@ -11,6 +12,18 @@
   :url => { :controller => "admin/principal", :action => "mostra_detalhe_plano"}))
 %>
 <span id='sobre_plano'>[Escolha um plano]</span>
+<%else%>
+  <p>
+    <b>Plano: </b><%= @plano.nome%>
+  </p>
+  <p>
+    <b>Num de anuncios: </b><%= @plano.num_anuncios%>
+  </p>
+  <p>
+    <b>Valor: </b><%= @plano.valor %>
+  </p>
+  <%= f.hidden_field :plano_id , :value => "#{@plano.id}"%>
+<%end%>
 <%= f.hidden_field :usuario_id , :value => "#{@current_usuario.id}"%>
     <br />
     <br />
@@ -20,7 +33,7 @@
 <% end -%>
 <%else%>
     <%= @usuario_plano.plano.nome %>
-     <%= link_to_modal "[Detalhes do plano]", "detalhes_plano", @usuario_plano.plano_id, "Sobre o plano" %>
+    <%= link_to_modal "[Detalhes do plano]", "detalhes_plano", @usuario_plano.plano_id, "Sobre o plano" %>
 <%end%>
 
 

@@ -278,4 +278,8 @@ font-size:12px;
 		
 .anuncio_table tbody tr.odd:hover		{
 		background: #fff;
-		}
+}
+#tudo #area #conteudo #col_esq .search_form {
+  margin: 4px;
+  padding: 4px;
+}

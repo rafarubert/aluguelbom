@@ -1,0 +1,2 @@
+module AnuncieHelper
+end

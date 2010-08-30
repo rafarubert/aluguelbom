@@ -6,8 +6,16 @@ class Admin::PrincipalController < Admin::AdminController
   layout 'admin/admin'
   def index
     if current_usuario.tipo_usuario_id == 1 and UsuarioPlano.count(:conditions => ["usuario_id = ?", current_usuario.id]) < 1
+      if session[:plano_id]
+        @plano = Plano.find(session[:plano_id])
+        session[:plano_id] = nil
+      end
       @usuario_plano = UsuarioPlano.new
     else
+      if session[:plano_id]
+        session[:plano_id] = nil
+        flash[:warning] = "voce ja possui um plano cadastrado"
+      end
      @usuario_plano = UsuarioPlano.first(:conditions => ["usuario_id = ?", @current_usuario.id])
     end
   end

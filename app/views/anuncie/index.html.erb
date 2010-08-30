@@ -1,0 +1,7 @@
+<h2>Planos</h2>
+<% @planos.each do |p|%>
+  <a  class="confirma_plano_img" href='/confirmar_plano/<%=  p.id %>' ><%= image_tag(p.banner.url) %></a>
+  <br />
+  <br />
+<%end%>
+

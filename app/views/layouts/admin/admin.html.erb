@@ -30,28 +30,19 @@
 			</div>
 			<%end -%>
 	<div id="wrapper">
-    	<!-- h1 tag stays for the logo, you can use the a tag for linking the index page -->
     	<h1><a href="#"><span>Aluguel bom</span></a></h1>
-        
         <%= render :partial => 'layouts/admin/menu_controller' %>
         <div id="containerHolder">
 		<div id="container">
-        	
         	<%= render :partial => 'layouts/admin/menu_action' %>
-                
-                <!-- h2 stays for breadcrumbs -->
                 <h2>Olá, <span><%= @current_usuario.nome%></span></h2>
-                
                 <div id="main">
-
 			<%= yield %>
                 </div>
-                
                 <div class="clear"></div>
             </div>
         </div>	
-        
-        <p id="footer"><a href="http://www.iterativa.com.br">Iterativa Soluções em T.I.</a></p>
+        <p id="footer">=)</p>
     </div>
 </body>
 </html>

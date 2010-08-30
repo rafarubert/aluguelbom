@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100422002938) do
+ActiveRecord::Schema.define(:version => 20100830025352) do
 
   create_table "anuncios", :force => true do |t|
     t.string   "titulo",          :limit => 80
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20100422002938) do
   add_index "estados", ["sigla"], :name => "index_estados_on_sigla"
 
   create_table "planos", :force => true do |t|
-    t.string   "nome",           :limit => 80
+    t.string   "nome",                :limit => 80
     t.integer  "num_anuncios"
     t.integer  "expira_anuncio"
     t.integer  "usuario_id"
@@ -63,6 +63,10 @@ ActiveRecord::Schema.define(:version => 20100422002938) do
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   add_index "planos", ["nome", "usuario_id"], :name => "index_planos_on_nome_and_usuario_id"
