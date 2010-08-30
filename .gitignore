@@ -2,6 +2,7 @@ log/*.log
 tmp/**/*
 .DS_Store
 config/database.yml
+public/images/banner/*
 db/schema.rb
 doc/*
 *~

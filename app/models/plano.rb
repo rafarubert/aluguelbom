@@ -6,7 +6,7 @@ class Plano < ActiveRecord::Base
   has_attached_file :banner,
                     :path => ":rails_root/public/images/banner/:id/:basename.:extension",
                     :url => "/images/banner/:id/:basename.:extension",
-                    :default_url => "/images/banner/default.png"
+                    :default_url => "/images/default.png"
  
   validates_attachment_content_type :banner, :content_type => ["image/bmp", "image/x-png", "image/pjpeg", "image/jpg", "image/jpeg", "image/png", "image/gif"]
   
