@@ -27,3 +27,13 @@
 	min-height: 20px;
 	border-bottom: 1px solid #cccccc;
 }
+.form_search_index{
+}
+.form_search_index input, .form_search_index select {
+  height: 20px;
+  width: 100%;
+}
+.form_search_index .btn_search_index  {
+  height: 20px;
+  width: 60px;
+}

@@ -2,7 +2,7 @@ class Plano < ActiveRecord::Base
   belongs_to :usuario
   #has_one :anuncios, :through => :anuncio_planos
   #accepts_nested_attributes_for :anuncios, :allow_destroy => true
-  validates_presence_of :nome, :num_anuncios, :valor
+  validates_presence_of :nome, :num_anuncios, :valor, :num_imagens
   has_attached_file :banner,
                     :path => ":rails_root/public/images/banner/:id/:basename.:extension",
                     :url => "/images/banner/:id/:basename.:extension",

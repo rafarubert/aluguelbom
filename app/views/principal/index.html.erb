@@ -1,4 +1,4 @@
-<% form_remote_tag :url => { :action => "busca"}, :update => "div_busca" do %>
+<% form_remote_tag :url => { :action => "busca"}, :update => "div_busca", :html => {:class => "form_search_index"} do %>
   <% field_set_tag "Pesquisa" do %>
   <p>
     <label>Estado </label><br />
@@ -47,7 +47,7 @@
     <%= text_field_tag 'descricao' %>
   </p>
   <p>
-    <%= submit_tag "Buscar", :disable_with => "Aguarde..." %>
+    <%= submit_tag "Buscar",:class => "btn_search_index", :disable_with => "Aguarde..." %>
   </p>
   <% end %>
 <% end %>

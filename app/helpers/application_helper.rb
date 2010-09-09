@@ -3,5 +3,9 @@ module ApplicationHelper
   def link_to_modal(name, url, id, title)
     "<a href=\"/#{url}/#{id}\" title=\"#{title}\" onclick=\"Modalbox.show(this.href, {title: this.title}); return false;\">#{name}</a>"
   end
+  #TODO: Montar Trackline para colocar na pagina index
+  def trackline
+
+  end
 end
 
